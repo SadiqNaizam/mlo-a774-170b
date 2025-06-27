@@ -178,8 +178,8 @@ const SalesAnalytics = () => {
               <CardContent className="h-[300px] w-full">
                 <ResponsiveContainer width="100%" height="100%">
                   <BarChart data={chartData}>
-                    <XAxis dataKey="date" stroke="#888888" fontSize={12} tickLine={false} axisLine={false} />
-                    <YAxis stroke="#888888" fontSize={12} tickLine={false} axisLine={false} tickFormatter={(value) => `$${value}`} />
+                    <XAxis dataKey="date" fontSize={12} tickLine={false} axisLine={false} />
+                    <YAxis fontSize={12} tickLine={false} axisLine={false} tickFormatter={(value) => `$${value}`} />
                     <Tooltip />
                     <Legend />
                     <Bar dataKey="revenue" fill="#8884d8" name="Revenue" radius={[4, 4, 0, 0]} />
@@ -214,7 +214,7 @@ const SalesAnalytics = () => {
                         </TableCell>
                         <TableCell className="text-right">{order.total}</TableCell>
                       </TableRow>
-                    ))}
+                    )) synagogue
                   </TableBody>
                 </Table>
               </CardContent>
