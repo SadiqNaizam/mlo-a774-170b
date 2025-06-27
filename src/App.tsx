@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -15,28 +16,34 @@ import NotFound from "./pages/NotFound";
 const queryClient = new QueryClient();
 
 
-const App = () => (
-<QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-    <Toaster />
-    <Sonner />
-    <BrowserRouter>
-        <Routes>
+const App = () => {
+  useEffect(() => {
+    document.body.classList.add('dark');
+  }, []);
+
+  return (
+    <QueryClientProvider client={queryClient}>
+        <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+            <Routes>
 
 
-          <Route path="/" element={<Dashboard />} />
-          <Route path="/customer-insights" element={<CustomerInsights />} />
-          <Route path="/product-performance" element={<ProductPerformance />} />
-          <Route path="/sales-analytics" element={<SalesAnalytics />} />
-          <Route path="/settings" element={<Settings />} />
-          {/* catch-all */}
-          <Route path="*" element={<NotFound />} />
+              <Route path="/" element={<Dashboard />} />
+              <Route path="/customer-insights" element={<CustomerInsights />} />
+              <Route path="/product-performance" element={<ProductPerformance />} />
+              <Route path="/sales-analytics" element={<SalesAnalytics />} />
+              <Route path="/settings" element={<Settings />} />
+              {/* catch-all */}
+              <Route path="*" element={<NotFound />} />
 
 
-        </Routes>
-    </BrowserRouter>
-    </TooltipProvider>
-</QueryClientProvider>
-);
+            </Routes>
+        </BrowserRouter>
+        </TooltipProvider>
+    </QueryClientProvider>
+  );
+}
 
 export default App;
