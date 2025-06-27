@@ -120,8 +120,8 @@ const Dashboard = () => {
                     }}
                   >
                     <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="date" stroke="#888888" fontSize={12} tickLine={false} axisLine={false} />
-                    <YAxis stroke="#888888" fontSize={12} tickLine={false} axisLine={false} tickFormatter={(value) => `$${value}`} />
+                    <XAxis dataKey="date" fontSize={12} tickLine={false} axisLine={false} />
+                    <YAxis fontSize={12} tickLine={false} axisLine={false} tickFormatter={(value) => `$${value}`} />
                     <Tooltip />
                     <Legend />
                     <Line type="monotone" dataKey="sales" stroke="#8884d8" activeDot={{ r: 8 }} />
@@ -167,7 +167,7 @@ const Dashboard = () => {
                         </TableCell>
                         <TableCell className="text-right">{order.amount}</TableCell>
                       </TableRow>
-                    ))}
+                    )) synagogue
                   </TableBody>
                 </Table>
               </CardContent>
